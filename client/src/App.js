@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
-
+import ButtonBases from './components/LandingPage/LandingPage';
+import Layout from './components/Layout/Layout';
+import Navigation from './components/Navigation/Navigation';
 import "./App.css";
 
 class App extends Component {
@@ -61,6 +63,11 @@ class App extends Component {
   render() {
     return (
       <>
+      <Navigation>
+      <Layout />
+      <ButtonBases/>
+      </Navigation>
+     
         <div className="App">
           <h3> Hello </h3>
           <form onSubmit={this.handleSubmit}>
