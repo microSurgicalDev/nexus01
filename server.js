@@ -4,6 +4,9 @@ const bodyParser = require("body-parser");
 const path = require("path");
 
 const patients = require("./routes/api/Patients");
+const appointmentRoute = require('./routes/api/Appointments');
+const addPatients = require('./routes/api/AddPatients')
+
 
 const app = express();
 
@@ -11,7 +14,7 @@ const db = require("./config/keys").mongoURI;
 
 app.use(bodyParser.json());
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: false }));
 
 mongoose
   .connect(db, {
@@ -22,6 +25,9 @@ mongoose
   .catch(err => console.log(err));
 
 app.use("/api/patients", patients);
+app.use('/api/appointments', appointmentRoute);
+app.use('/api/addPatients', addPatients);
+
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));

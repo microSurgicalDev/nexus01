@@ -1,14 +1,14 @@
 const express = require("express");
 const router = express.Router();
 
-const Patient = require("../../models/Patient");
+const addPatient = require("../../models/NewPatient");
 
 // @route GET api/patients
 // @desc Get all patients
 // access PUblic
 
 router.get("/", (req, res) => {
-  Patient.find().then(patient => res.json(patient));
+  addPatient.find().then(patient => res.json(patient));
 });
 
 // @route POST api/patients
@@ -16,17 +16,18 @@ router.get("/", (req, res) => {
 // access PUblic
 
 router.post("/", (req, res) => {
-  const newPatient = new Patient({
-    name: req.body.name,
-    age: req.body.age
+  const addedPatient = new addPatient({
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
+    phoneNumber: req.body.phoneNumber
   });
 
-  newPatient
+  addedPatient
     .save()
     .then(patient => {
       res.json(patient);
     })
-    .catch(err => console.log(err));
+    .catch(err => console.log(err.response));
 });
 
 module.exports = router;

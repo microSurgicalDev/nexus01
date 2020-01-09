@@ -9,8 +9,8 @@ import Admin from "../Admin/Admin";
 // import EduPersonalization from "../Admin/EduPersonalization/EduPersonalization";
 // import NewPatient from "../Admin/NewPatient/NewPatient";
 // import Scheduling from "../Admin/Scheduling/Scheduling";
-// import AddPatient from "../Admin/Forms/AddPatient";
-// import Patients from "../Admin/Patients/Patients";
+import AddPatient from "../Admin/Forms/AddPatient";
+import AllPatients from "../Admin/AllPatients/AllPatients";
 // import Scheduler from "../Patients/AppointmentBuilder/AppointmentBuilder";
 
 class Navigation extends Component {
@@ -23,12 +23,12 @@ class Navigation extends Component {
         <Route path="/surgeon" component={Surgeon} />
         <Route path="/optometrist" component={Optometrist} /> */}
         <Route path="/admin" component={Admin} />
-        {/* <Route path="/admin/all-patients" component={Patients} /> */}
+        <Route path="/admin/all-patients" component={AllPatients} />
         {/* <Route path="/patient/appointments" component={Scheduler} /> */}
         {/* <Route path="/admin/education" component={EduPersonalization} />
         <Route path="/admin/patients" component={NewPatient} />
         <Route path="/admin/scheduling" component={Scheduling} /> */}
-        {/* <Route path="/admin/forms/addPatients" component={AddPatient} /> */}
+        <Route path="/admin/forms/addPatients" component={AddPatient} />
       </>
     );
   }
