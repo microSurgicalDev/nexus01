@@ -2,13 +2,29 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const AppointmentSchema = new Schema({
-  name: {
-    type: String,
-    required: true
+  firstName: {
+      type: String,
+      required: true
+  },
+  lastName: {
+      type: String,
+      required: true,
   },
   date: {
-    type: Date,
-    default: Date.now()
+      type: String,
+      required: true
+  },
+  slot: {
+      type: String,
+      required: true,
+  },
+  location: {
+      type: String,
+      required: true
+  },
+  phone: {
+      type: Number,
+      required: true
   }
 });
 

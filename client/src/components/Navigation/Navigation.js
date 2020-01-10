@@ -11,7 +11,7 @@ import Admin from "../Admin/Admin";
 // import Scheduling from "../Admin/Scheduling/Scheduling";
 import AddPatient from "../Admin/Forms/AddPatient";
 import AllPatients from "../Admin/AllPatients/AllPatients";
-// import Scheduler from "../Patients/AppointmentBuilder/AppointmentBuilder";
+import Scheduler from "../Patients/AppointmentBuilder/AppointmentBuilder";
 
 class Navigation extends Component {
   render() {
@@ -19,9 +19,9 @@ class Navigation extends Component {
       <>
         <Layout />
         <Route path="/" exact component={ButtonBases} />
-        {/* <Route path="/patients" component={AppointmentBuilder} />
-        <Route path="/surgeon" component={Surgeon} />
-        <Route path="/optometrist" component={Optometrist} /> */}
+        <Route path="/patient/appointments" component={Scheduler} />
+        {/* <Route path="/surgeon" component={Surgeon} /> */}
+        {/* <Route path="/optometrist" component={Optometrist} /> */}
         <Route path="/admin" component={Admin} />
         <Route path="/admin/all-patients" component={AllPatients} />
         {/* <Route path="/patient/appointments" component={Scheduler} /> */}

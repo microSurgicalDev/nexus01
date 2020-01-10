@@ -25,7 +25,7 @@ class AddPatient extends Component {
 
       handleSubmit = event => {
         event.preventDefault();
-    
+        this.resetUserInputs();
         const payload = {
           firstName: this.state.firstName,
           lastName: this.state.lastName,

@@ -17,7 +17,12 @@ router.get("/", (req, res) => {
 
 router.post("/", (req, res) => {
   const newAppointment = new Appointment({
-    name: req.body.name
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
+    date: req.body.date,
+    slot: req.body.slot,
+    location: req.body.location,
+    phone: req.body.phone
   });
 
   newAppointment
@@ -26,7 +31,7 @@ router.post("/", (req, res) => {
       res.json(appointment);
       console.log('New appointment has been saved')
     })
-    .catch(err => console.log(err.response));
+    .catch(err => console.log(err));
 });
 
 module.exports = router;
