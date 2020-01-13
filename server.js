@@ -6,6 +6,7 @@ const path = require("path");
 const patients = require("./routes/api/Patients");
 const appointmentRoute = require('./routes/api/Appointments');
 const addPatients = require('./routes/api/AddPatients')
+const education = require('./routes/api/Educations');
 
 
 const app = express();
@@ -27,7 +28,7 @@ mongoose
 app.use("/api/patients", patients);
 app.use('/api/appointments', appointmentRoute);
 app.use('/api/addPatients', addPatients);
-
+app.use('/api/education', education);
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));

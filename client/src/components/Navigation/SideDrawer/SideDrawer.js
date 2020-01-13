@@ -106,7 +106,7 @@ export default function ClippedDrawer() {
             </ListItemText>
           </ListItem>
           <ListItem button onClick={handleClick}>
-            <ListItemText>Forms</ListItemText>
+            <ListItemText>New Patient Entry</ListItemText>
             {open ? <ExpandLess /> : <ExpandMore />}
           </ListItem>
           <Collapse in={open} timeout="auto" unmountOnExit>

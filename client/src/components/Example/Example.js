@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Modal from 'react-modal';
-import styles from '../../containers/AppointmentBuilder/AppointmentBuilder.module.css'
+import styles from '../Patients/AppointmentBuilder/Appointment.module.css';
 import image from "../../assets/images/screenShot.png";
 
 class Example extends Component {

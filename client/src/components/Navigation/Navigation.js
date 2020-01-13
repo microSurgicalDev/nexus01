@@ -6,8 +6,8 @@ import ButtonBases from "../LandingPage/LandingPage";
 import Surgeon from "../Surgeon/Surgeon";
 import Admin from "../Admin/Admin";
 // import Optometrist from "../Optometrist/Optometrist";
-// import EduPersonalization from "../Admin/EduPersonalization/EduPersonalization";
-// import NewPatient from "../Admin/NewPatient/NewPatient";
+import EduPersonalization from "../Admin/EduPersonalization/EduPersonalization";
+import NewPatient from "../Admin/NewPatient/NewPatient";
 // import Scheduling from "../Admin/Scheduling/Scheduling";
 import AddPatient from "../Admin/Forms/AddPatient";
 import AllPatients from "../Admin/AllPatients/AllPatients";
@@ -24,8 +24,8 @@ class Navigation extends Component {
         {/* <Route path="/optometrist" component={Optometrist} /> */}
         <Route path="/admin" component={Admin} />
         <Route path="/admin/all-patients" component={AllPatients} />
-        {/* <Route path="/admin/education" component={EduPersonalization} /> */}
-        {/* <Route path="/admin/patients" component={NewPatient} /> */}
+        <Route path="/admin/education" component={EduPersonalization} />
+        <Route path="/admin/forms/addPatients" component={NewPatient} />
         {/* <Route path="/admin/scheduling" component={Scheduling} /> */}
         <Route path="/admin/forms/addPatients" component={AddPatient} />
       </>

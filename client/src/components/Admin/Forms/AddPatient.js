@@ -44,8 +44,8 @@ class AddPatient extends Component {
 render() {
     return (
         <>
- <div style={{ marginLeft: "250px" }}>
-          This is the new patient form
+ <div style={{ marginLeft: "250px", marginTop: "25px" }}>
+          
           <form onSubmit={this.handleSubmit}>
             <div>
               <input
