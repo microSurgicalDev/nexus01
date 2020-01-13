@@ -1,4 +1,9 @@
 import React, { Component } from "react";
+import {
+    Stitch,
+    AnonymousCredential,
+    RemoteMongoClient
+  } from "mongodb-stitch-browser-sdk";
 import axios from "axios";
 import PropTypes from "prop-types";
 import { makeStyles, withStyles } from "@material-ui/core/styles";
@@ -379,6 +384,7 @@ export default class AppointmentBuilder extends Component {
     let pickedDay = dayjs(datePicked).format("dddd MMM Do, YYYY");
 
     const confirmation = {
+      owner_id: this.client.auth.user.id,
       firstName: this.state.firstName,
       lastName: this.state.lastName,
       date: pickedDay,
@@ -387,14 +393,55 @@ export default class AppointmentBuilder extends Component {
       phone: this.state.phone
     };
 
-    axios.post('/api/appointments', confirmation)
-    .then(res => console.log('A new appointment has been made'))
+
+    this.db
+    .collection("appointments")
+    .insertOne(confirmation)
+    .then(result =>
+      console.log(
+        `Successfully inserted item with _id: ${result.insertedIds} and the appointment date is ${confirmation.location}`
+      )
+    )
+    .catch(err => console.error(`Failed to insert item: ${err}`))
     .then(this.handleClose)
-    .then(window.setTimeout(()=> {
-        this.openSecondModal()
-    }))
-    .catch(err => console.log(err));
+    .then(
+      window.setTimeout(() => {
+        this.openSecondModal();
+      }, 3000)
+    );
+
+    // axios.post('/api/appointments', confirmation)
+    // .then(res => console.log('A new appointment has been made'))
+    // .then(this.handleClose)
+    // .then(window.setTimeout(()=> {
+    //     this.openSecondModal()
+    // }))
+    // .catch(err => console.log(err));
   };
+
+  componentDidMount() {
+    // Initialize the App Client
+    this.client = Stitch.initializeDefaultAppClient(
+      "appointmentscheduler-racyu"
+    );
+
+    Stitch.defaultAppClient.auth
+      .loginWithCredential(new AnonymousCredential())
+      .then(user => {
+        console.log(`Logged in as anonymous user with id: ${user.id}`);
+      })
+      .catch(console.error);
+    // Get a MongoDB Service Client, used for logging in and communicating with Stitch
+    const mongodb = this.client.getServiceClient(
+      RemoteMongoClient.factory,
+      "mongodb-atlas"
+    );
+    // Get a reference to the new appointments database
+    this.db = mongodb.db("NEXUS");
+  }
+
+
+
 
   resize() {
     this.setState({ smallScreen: window.innerWidth < 768 });
