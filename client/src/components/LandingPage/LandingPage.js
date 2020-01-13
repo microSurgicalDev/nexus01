@@ -200,7 +200,7 @@ export default function ButtonBases() {
               width: images[0].patient.width
             }}
           >
-            <a href="/patients" to="/patients">
+            <a href="/patient/appointments" to="/patient/appointments">
               <span
                 className={classes.imageSrc}
                 style={{
