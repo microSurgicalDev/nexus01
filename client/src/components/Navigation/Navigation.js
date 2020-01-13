@@ -3,7 +3,7 @@ import Layout from "../Layout/Layout";
 import { Route } from "react-router-dom";
 // import AppointmentBuilder from "../../containers/AppointmentBuilder/AppointmentBuilder";
 import ButtonBases from "../LandingPage/LandingPage";
-// import Surgeon from "../Surgeon/Surgeon";
+import Surgeon from "../Surgeon/Surgeon";
 import Admin from "../Admin/Admin";
 // import Optometrist from "../Optometrist/Optometrist";
 // import EduPersonalization from "../Admin/EduPersonalization/EduPersonalization";
@@ -20,14 +20,13 @@ class Navigation extends Component {
         <Layout />
         <Route path="/" exact component={ButtonBases} />
         <Route path="/patient/appointments" component={Scheduler} />
-        {/* <Route path="/surgeon" component={Surgeon} /> */}
+        <Route path="/surgeon" component={Surgeon} />
         {/* <Route path="/optometrist" component={Optometrist} /> */}
         <Route path="/admin" component={Admin} />
         <Route path="/admin/all-patients" component={AllPatients} />
-        {/* <Route path="/patient/appointments" component={Scheduler} /> */}
-        {/* <Route path="/admin/education" component={EduPersonalization} />
-        <Route path="/admin/patients" component={NewPatient} />
-        <Route path="/admin/scheduling" component={Scheduling} /> */}
+        {/* <Route path="/admin/education" component={EduPersonalization} /> */}
+        {/* <Route path="/admin/patients" component={NewPatient} /> */}
+        {/* <Route path="/admin/scheduling" component={Scheduling} /> */}
         <Route path="/admin/forms/addPatients" component={AddPatient} />
       </>
     );

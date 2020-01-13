@@ -35,7 +35,7 @@ import {
 import DayPicker from "react-day-picker";
 import Modal from "react-modal";
 import styles from "../AppointmentBuilder/Appointment.module.css";
-// import PatientEdu from "../../components/PatientEdu/PatientEdu";
+import PatientEdu from "../../Admin/PatientEdu/PatientEdu";
 import { Wrapper } from "@material-ui/pickers/wrappers/Wrapper";
 dayjs.extend(advancedFormat);
 Modal.setAppElement("#root");
@@ -676,7 +676,7 @@ export default class AppointmentBuilder extends Component {
               </DialogActions>
             </Dialog>
           </form>
-          {/* <PatientEdu /> */}
+          <PatientEdu />
         </section>
         <Dialog open={this.state.secondModal} onClose={this.handleClose}>
           <DialogTitle>Your appointment has been confirmed!</DialogTitle>
