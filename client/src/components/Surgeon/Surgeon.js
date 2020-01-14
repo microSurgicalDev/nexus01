@@ -266,16 +266,10 @@ export default function DetailedExpansionPanel() {
           
         </ExpansionPanelDetails>
         <ExpansionPanelDetails>
-        {/* <img src={calendar} alt="calendar" style={{height: "675px", width: "900px", marginLeft: "160px",}}/> */}
           <Scheduling />
         </ExpansionPanelDetails>
         <Divider />
       </ExpansionPanel>
-
-
-
-
-
     </div>
     
 </>
