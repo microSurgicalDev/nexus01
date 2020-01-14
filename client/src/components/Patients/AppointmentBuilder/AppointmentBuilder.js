@@ -409,14 +409,6 @@ export default class AppointmentBuilder extends Component {
         this.openSecondModal();
       }, 3000)
     );
-
-    // axios.post('/api/appointments', confirmation)
-    // .then(res => console.log('A new appointment has been made'))
-    // .then(this.handleClose)
-    // .then(window.setTimeout(()=> {
-    //     this.openSecondModal()
-    // }))
-    // .catch(err => console.log(err));
   };
 
   componentDidMount() {

@@ -25,7 +25,7 @@ import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
-// import Scheduling from '../Admin/Scheduling/Scheduling';
+import Scheduling from '../Admin/Scheduling/Scheduling';
 
 
 
@@ -266,7 +266,8 @@ export default function DetailedExpansionPanel() {
           
         </ExpansionPanelDetails>
         <ExpansionPanelDetails>
-        <img src={calendar} alt="calendar" style={{height: "675px", width: "900px", marginLeft: "160px",}}/>
+        {/* <img src={calendar} alt="calendar" style={{height: "675px", width: "900px", marginLeft: "160px",}}/> */}
+          <Scheduling />
         </ExpansionPanelDetails>
         <Divider />
       </ExpansionPanel>
